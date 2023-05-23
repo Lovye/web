@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* body{
+                height: 1500px;
+            } */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .box {
+            width: 150px;
+            border: 1px solid #ccc;
+            padding: 4px;
+            position: absolute;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        h2 {
+            padding: 5px;
+            font-size: 14px;
+            text-align: center;
+            background-color: #ccc;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="box">
+            <img src="img/001.jpg" alt="">
+            <h2>001</h2>
+        </div>
+    </div>
+</body>
+<script>
+    let container = document.getElementById('container');
+    let boxs = document.getElementsByClassName('box');
+    let containerW = container.offsetWidth;
+    let boxW = boxs[0].offsetWidth;
+    let column = parseInt(containerW / boxW);
+    let maxh = 0;
+    const gap = 10;
+    let hArr = [];
+    window.onload = function () {
+        waterFall();
+        init();
+    }
+    function init() {
+        let scrollPosition = window.pageYOffset;  // 获取当前滚动位置
+        let windowHeight = window.innerHeight;    // 获取窗口高度
+        let bodyHeight = document.documentElement.scrollHeight; // 获取页面总高度
+        while (maxh < windowHeight) {
+            scrollPosition = window.pageYOffset;
+            windowHeight = window.innerHeight;
+            bodyHeight = document.documentElement.scrollHeight;
+            let i = Math.floor(Math.random() * imgList.length);
+            let box = document.createElement('div');
+            box.className = 'box';
+            container.appendChild(box);
+            let img = document.createElement('img');
+            img.src = imgList[i].src;
+            box.appendChild(img);
+            let title = document.createElement('h2');
+            title.innerText = imgList[i].title;
+            box.appendChild(title);
+            waterFall();
+        }
+        console.log(maxh,windowHeight);
+        return;
+    }
+    function waterFall() {
+        for (let i = 0; i < boxs.length; i++) {
+            for (let k = 0; k < hArr.length; k++) {
+                if (maxh < hArr[k]) maxh = hArr[k];
+            }
+            if (i < column) {
+                boxs[i].style.left = (boxW + gap) * i + "px";
+                hArr[i] = boxs[i].offsetHeight;
+            } else {
+                let minV = minArr(hArr).val;
+                let minI = minArr(hArr).pos;
+                boxs[i].style.left = (boxW + gap) * minI + "px";
+                boxs[i].style.top = minV + gap + "px";
+                hArr[minI] = minV + gap + boxs[i].offsetHeight;
+            }
+        }
+    }
+    function minArr(arr) {
+        let minElem = {};
+        minElem.val = arr[0];
+        minElem.pos = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (minElem.val > arr[i]) {
+                minElem.val = arr[i];
+                minElem.pos = i;
+            }
+        }
+        return minElem;
+    }
+    const imgList = [
+        { src: "img/001.jpg", title: "001" },
+        { src: "img/002.jpg", title: "002" },
+        { src: "img/003.jpg", title: "003" },
+        { src: "img/纳西妲1.jpg", title: "纳西妲" },
+        { src: "img/纳西妲2.jpg", title: "纳西妲" },
+        { src: "img/纳西妲3.jpg", title: "纳西妲" },
+        { src: "img/纳西妲4.jpg", title: "纳西妲" },
+        { src: "img/纳西妲5.jpg", title: "纳西妲" },
+        { src: "img/纳西妲6.jpg", title: "纳西妲" },
+    ];
+    window.addEventListener('scroll', function () {
+        // 判断是否接近页面底部
+        let scrollPosition = window.pageYOffset;  // 获取当前滚动位置
+        let windowHeight = window.innerHeight;    // 获取窗口高度
+        let bodyHeight = document.documentElement.scrollHeight; // 获取页面总高度
+        if (scrollPosition + windowHeight >= bodyHeight - 200) {
+            let i = Math.floor(Math.random() * imgList.length);
+            let box = document.createElement('div');
+            box.className = 'box';
+            container.appendChild(box);
+            let img = document.createElement('img');
+            img.src = imgList[i].src;
+            box.appendChild(img);
+            let title = document.createElement('h2');
+            title.innerText = imgList[i].title;
+            box.appendChild(title);
+            waterFall();
+        }
+    })
+</script>
+
+</html>
