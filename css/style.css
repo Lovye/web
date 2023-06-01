@@ -3,71 +3,93 @@
     margin: 0px;
     padding:0px;
 }
+body{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 /* 网页头部 */
 #head{
     height: 40px;
+    width: 100%;
     background-color: rgb(65, 147, 248);
+    animation-name: animation;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate-reverse;
 }
 /* 登录 */
 /* 主界面 */
-#log-in{
-    width: 450px;
-    height: 350px;
-    position: relative;
-    margin: 0 auto;
-    margin-top:80px;
+#login-set{
+    /* width: 60%; */
+    /* height: 350px; */
+    /* margin-top: 150px; */
     background-color: rgb(255, 255, 255);
     box-shadow: 0px 0px 10px rgb(0,0,0,0.2);
 }
 /* 头部分 */
-#log-in > p{
+#login-set > p{
+    font-size:1.5em;
     text-align: center;
-    font-size: x-large;
     font-weight: bolder;
 }
 /* 账号密码 */
-#user-input{
-    position: absolute;
-    top: 80px;
-    left: 75px;
-}
-#user-input > input{
-    width: 300px;
-    height: 50px;
+#user-name{
+    /* position: absolute; */
+    /* top: 100px; */
+    /* left: 80px; */
+    margin: 0.5em 5em 0.5em 5em;
+    height: 2em;
+    width:15em;
     border: 2px solid rgb(141, 209, 243);
     border-radius: 5px;
-    margin-bottom: 5px;
-    font-size: 20px;
 }
-#user-input > input:hover{
+#user-name:hover{
     border: 2px solid rgb(0, 153, 255);
 }
+#user-name:focus{
+    outline:none;
+    border-color:rgb(128, 128, 128);
+}
+#user-psd{
+    height: 2em;
+    width:15em;
+    margin: 0.5em 5em 0.5em 5em;
+    border: 2px solid rgb(141, 209, 243);
+    border-radius: 5px;
+}
+#user-psd:hover{
+    border: 2px solid rgb(0, 153, 255);
+}
+#user-psd:focus{
+    outline:none;
+    border-color:rgb(128, 128, 128);
+}
 /* 登录以及注册 */
-#more > input{
-    width: 250px;
-    height: 30px;
-    display: block;
-    position: relative;
-    left: 25px;
+#input-submit{
     background-color: rgba(197, 197, 197, 0.388);
+    height: 2em;
+    width: 10em;
+    transform: translate(75%);
     border: none;
     border-radius: 5px;
-    font-weight: bolder;
+    font-weight: bolder; 
 }
-#more > input:hover{
+#input-submit:hover{
     background-color: rgba(197, 197, 197, 0.758);
 }
-#more > a{
-    position: relative;
-    top: 10 px;
+a{
     color: rgb(26, 168, 250);
     text-decoration: none;
 }
+a:nth-of-type(1){
+    display: inline-block;
+    margin: 0.5em 0 0.5em 1em;
+}
 /* 动画 */
 img.anima{
-    top:0px;
-    right:200px;
-    position:absolute;
     height: 200px;
     width: 400px;
     animation-name: animation;
@@ -77,7 +99,11 @@ img.anima{
     animation-timing-function: linear;
 }
 @keyframes animation{
-
+    0%{background-color:rgb(248, 74, 65)}
+    25%{background-color: rgb(255, 174, 0);}
+    50%{background-color: rgb(166, 255, 0);}
+    75%{background-color: rgb(0, 255, 229);}
+    100%{background-color: rgb(2, 86, 255);}
 }
 
 

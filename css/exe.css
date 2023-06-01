@@ -2,20 +2,32 @@
     margin: 0;
     padding: 0;
 }
+/* 超链接样式设置 */
+a{
+    text-decoration: none;
+    color: rgb(0, 213, 255); 
+}
+a:hover{
+    color: rgb(0, 164, 197); 
+    text-decoration: underline black;
+}
+/* ------------------ */
 .flex-containner{
     margin: 0 auto;
-    height: 500px;
+    height: 600px;
     width: 80%;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
 }
 .flex-item{
-    background-color: rgb(222, 251, 251);
+    background-color: rgb(248, 255, 255);
     border: 1px solid black;
-    text-align: center;
     height: 100%;
     width: 33%;
+    overflow:hidden;
+}
+#left{
+    text-align: center;
 }
 #left > p:nth-of-type(n){
     text-indent:2em;
@@ -25,30 +37,37 @@
 #left > p:last-of-type{
     display: inline-block;
     font-size: xx-small;
-    color:rgb(195, 195, 195);
+    color:rgb(164, 164, 164);
     width: 60%;
 }
-#middle{
-    height: 10%;
-    width: 100%;
-    margin: 5% 0 0 5%;
-}
-#line-head{
-    width: 20%;
-    height: 100%;
+.middle-item{
+    width: 350px;
+    height: 40px;
     display: flex;
-    background-color: antiquewhite;
+    flex-direction: row;
+    margin: 10px 0 10px 20px;
 }
-#line-head > div:nth-child(1){
+.head{
+    width: 80px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+}
+.head > div:nth-child(1){
     width: 50%;
     height: 100%;
+    text-align: center;
+    font-size: x-large;
+    background-color: aliceblue;
+    color: aqua;
     border: 1px solid black;
-    font-size: 1px;
-    text-align: justify;
 }
-#line-head > div:nth-child(2){
+.head > div:nth-child(2){
     width: 50%;
     height: 100%;
+    text-align: center;
+    font-size:small;
+    top: 50%;
+    word-wrap: break-word;
     border: 1px solid black;
-    text-align: justify;
 }
