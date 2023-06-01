@@ -8,6 +8,7 @@ body{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    row-gap: 10em;
 }
 /* 网页头部 */
 #head{
@@ -31,6 +32,7 @@ body{
 }
 /* 头部分 */
 #login-set > p{
+    padding:  2em 5em 0 5em;
     font-size:1.5em;
     text-align: center;
     font-weight: bolder;
@@ -41,8 +43,8 @@ body{
     /* top: 100px; */
     /* left: 80px; */
     margin: 0.5em 5em 0.5em 5em;
-    height: 2em;
-    width:15em;
+    height: 2.5em;
+    width:18em;
     border: 2px solid rgb(141, 209, 243);
     border-radius: 5px;
 }
@@ -54,8 +56,8 @@ body{
     border-color:rgb(128, 128, 128);
 }
 #user-psd{
-    height: 2em;
-    width:15em;
+    height: 2.5em;
+    width:18em;
     margin: 0.5em 5em 0.5em 5em;
     border: 2px solid rgb(141, 209, 243);
     border-radius: 5px;
@@ -72,7 +74,7 @@ body{
     background-color: rgba(197, 197, 197, 0.388);
     height: 2em;
     width: 10em;
-    transform: translate(75%);
+    transform: translate(90%);
     border: none;
     border-radius: 5px;
     font-weight: bolder; 
@@ -86,7 +88,7 @@ a{
 }
 a:nth-of-type(1){
     display: inline-block;
-    margin: 0.5em 0 0.5em 1em;
+    margin: 1em 0 1em 1em;
 }
 /* 动画 */
 img.anima{
