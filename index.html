@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://www.w3school.com.cn/lib/bs/bootstrap.css" rel="stylesheet">
+    <script src="https://www.w3school.com.cn/lib/bs/bootstrap.js"></script>
+</head>
+<body>
+	<div class="container mt-3">
+		<h1>带边框的表格</h1>
+		<p>.table-bordered 类在表格和单元格的所有边添加边框：</p>            
+		<div class="table-responsive">
+			<table class="table table-bordered table-striped table-hover">
+				<thead>
+				  <tr>
+					<th>Firstname</th>
+					<th>Lastname</th>
+					<th>Email</th>
+				  </tr>
+				</thead>
+				<tbody>
+				  <tr class="table-primary">
+					<td>Bill</td>
+					<td>Gates</td>
+					<td>bill@example.com</td>
+				  </tr>
+				  <tr class="table-success">
+					<td>Steve</td>
+					<td>Jobs</td>
+					<td>steve@example.com</td>
+				  </tr>
+				  <tr class="table-info">
+					<td>Elon</td>
+					<td>Musk</td>
+					<td>elon@example.com</td>
+				  </tr>
+				</tbody>
+			  </table>
+		</div>
+		<div class="alert alert-info alert-dismissible fade show">
+			<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+			<strong>原神，启动！</strong>
+		</div>
+		<!-- <img style="max-width: 100%; height: auto;" src="img/纳西妲5.jpg" alt=""> -->
+		<div class="btn-group-vertical">
+			<button class="btn btn-primary">
+				<span class="spinner-border spinner-border-sm"></span>
+				你先别急
+			</button>
+			<button class="btn btn-primary" disabled>
+				<span class="spinner-border spinner-border-sm"></span>
+				你先别急
+			</button>
+		</div>
+		<div class="progress-bar progress-bar-striped progress-bar-animated" style="width:40%">40%</div>
+		<div class="spinner-border"></div>
+		  <ul class="list-group">
+			<li class="list-group-item d-flex justify-content-between align-items-center">
+			  收件箱
+			  <span class="badge bg-primary rounded-pill">12</span>
+			</li>
+			<li class="list-group-item d-flex justify-content-between align-items-center">
+			  广告邮件
+			  <span class="badge bg-primary rounded-pill">50</span>
+			</li>
+			<li class="list-group-item d-flex justify-content-between align-items-center">
+			  垃圾箱
+			  <span class="badge bg-primary rounded-pill">99</span>
+			</li>
+		  </ul>
+		  <ul class="pagination">
+			<li class="page-item"><a class="page-link" href="#">上一页</a></li>
+			<li class="page-item"><a class="page-link" href="#">1</a></li>
+			<li class="page-item"><a class="page-link" href="#">2</a></li>
+			<li class="page-item"><a class="page-link" href="#">3</a></li>
+			<li class="page-item"><a class="page-link" href="#">下一页</a></li>
+		  </ul>
+		  <div class="card" style="max-width: 400px;">
+			<img class="card-img-top" src="img/纳西妲5.jpg" alt="Card image">
+			<div class="card-body">
+			  <h4 class="card-title">纳西妲</h4>
+			  <p class="card-text">草之神-纳西妲</p>
+			  <a href="#" class="btn btn-primary">查看个人资料</a>
+			</div>
+		  </div>
+</body>
+</html>
